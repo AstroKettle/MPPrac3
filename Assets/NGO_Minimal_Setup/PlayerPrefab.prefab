@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8570482996984222858}
   - component: {fileID: 846049065314438756}
-  - component: {fileID: 386201188049697418}
   - component: {fileID: 6122728881244329199}
   - component: {fileID: 3733918008615418687}
   - component: {fileID: 6733370342093957963}
@@ -18,9 +17,10 @@ GameObject:
   - component: {fileID: 3753029524243805901}
   - component: {fileID: 8093600048404122625}
   - component: {fileID: 6076135622636803006}
+  - component: {fileID: -5710873623356298543}
   m_Layer: 0
   m_Name: PlayerPrefab
-  m_TagString: Untagged
+  m_TagString: Ball
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -48,28 +48,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2902557981253040869}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!65 &386201188049697418
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2902557981253040869}
-  m_Material: {fileID: 13400000, guid: 1e0a31fc3c2bfd742b3f098cea6d45ee, type: 2}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &6122728881244329199
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -127,7 +106,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 3821658882
+  GlobalObjectIdHash: 343286215
   InScenePlacedSourceGlobalObjectIdHash: 0
   DeferredDespawnTick: 0
   Ownership: 1
@@ -189,8 +168,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ShowTopMostFoldoutHeaderGroup: 1
-  Speed: 5
+  Speed: 500
+  rotationSpeed: 10
   cam: {fileID: 7715827898043058424}
+  forceMultiplier: 10
 --- !u!114 &3753029524243805901
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -229,7 +210,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 80
   m_CollisionDetection: 0
 --- !u!114 &6076135622636803006
 MonoBehaviour:
@@ -248,6 +229,27 @@ MonoBehaviour:
   UseRigidBodyForMotion: 0
   AutoUpdateKinematicState: 1
   AutoSetKinematicOnDespawn: 1
+--- !u!135 &-5710873623356298543
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2902557981253040869}
+  m_Material: {fileID: 13400000, guid: 1e0a31fc3c2bfd742b3f098cea6d45ee, type: 2}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.59
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &7715827898043058424
 GameObject:
   m_ObjectHideFlags: 0
